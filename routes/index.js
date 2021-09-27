@@ -5,7 +5,9 @@ const {auth,adminAauth}=require('../middleware/jwt_authentication')
 const cronJob = require("cron").CronJob;
 const router=express.Router();
 
-
+router.get('/',(req,res)=>{
+  res.send({message:"Home Page"})
+})
 router.post('/sign-up',userController.signUp);
 router.post('/sign-in',userController.signIn);
 router.post('/feedback/:id',auth,userController.feedback);
