@@ -2,7 +2,7 @@ const express=require('express');
 const app=express();
 const cookieParser = require("cookie-parser");
 const mongoose=require('./config/mongoose');
-const port=4000
+const port=process.env.port || 4000
 
 //conver json to object
 app.use(express.json());
